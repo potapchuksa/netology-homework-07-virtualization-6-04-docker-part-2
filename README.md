@@ -127,10 +127,12 @@ Docker Compose на данный момент отдельно не устана
 
 ### Решение
 
-[compose.yml](compose1/compose.yml)
-
 ![](img/img-07-01.png)
 ![](img/img-07-02.png)
+
+[compose.yml](compose1/compose.yml)
+
+![](img/img-07-04.png)
 ![](img/img-07-03.png)
 
 ---
