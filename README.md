@@ -127,10 +127,12 @@ Docker Compose на данный момент отдельно не устана
 
 ### Решение
 
-[compose.yml](compose1/compose.yml)
-
 ![](img/img-07-01.png)
 ![](img/img-07-02.png)
+
+[compose.yml](compose1/compose.yml)
+
+![](img/img-07-04.png)
 ![](img/img-07-03.png)
 
 ---
@@ -167,6 +169,37 @@ Docker Compose на данный момент отдельно не устана
 В качестве решения приложите скриншот с событием из Alertmanager.
 
 ### Решение
+
+![](img/img-09-01.png)
+
+Добавил конфигурацию alertmanager в compose.yml.
+
+![](img/img-09-02.png)
+
+По [ссылке](https://t.me/MiddlemanBot) создал бота в Телеграмме, и по команде /start получил токен.
+
+![](img/img-09-03.png)
+
+Создал конфигурационный файл alertmanager.yml, испльзовал токен полученный на предыдущем этапе.
+
+![](img/img-09-04.png)
+
+Изменил конфигурацию prometheus для связи с alertmanager.
+
+![](img/img-09-05.png)
+
+Создал правила для алетов в файле rules.yml.
+
+![](img/img-09-06.png)
+
+Запустил docker compose, и проверил всё ли поднялось.
+
+![](img/img-09-07.png)
+
+Проверил отправку сообщений
+
+![](img/img-09-08.png)
+![](img/img-09-09.png)
 
 ---
 
