@@ -130,7 +130,7 @@ Docker Compose на данный момент отдельно не устана
 ![](img/img-07-01.png)
 ![](img/img-07-02.png)
 
-[compose.yml](compose1/compose.yml)
+[Папка с проектом (compose.yml + конфигурационные файлы)](https://github.com/potapchuksa/netology-homework-07-virtualization-6-04-docker-part-2/tree/main/my-compose-v1)
 
 ![](img/img-07-04.png)
 ![](img/img-07-03.png)
@@ -214,6 +214,8 @@ Docker Compose на данный момент отдельно не устана
 2. Как вы думаете зачем может понадобиться такой способ развертывания?
 
 ### Решение
+
+[Папка с проектом (compose.yml + конфигурационные файлы)](https://github.com/potapchuksa/netology-homework-07-virtualization-6-04-docker-part-2/tree/main/my-compose-v2)
 
 Установил Docker, перенёс папку с пректом, запустил docker compose up -d.
 Такой способ может понадобиться для установки одинакового окружения.
