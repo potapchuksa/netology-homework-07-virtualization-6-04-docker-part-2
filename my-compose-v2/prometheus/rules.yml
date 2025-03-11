@@ -1,0 +1,10 @@
+groups:
+  - name: potapchuk-s-a
+    rules:
+      - alert: max_level
+        expr: potapchuk_s_a{job="netology"} == 5
+        for: 15s
+
+      - alert: min_level
+        expr: potapchuk_s_a{job="netology"} == 0 
+        for: 15s

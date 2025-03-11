@@ -1,0 +1,69 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: potapchuk-s-a-netology-prometheus
+    command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    networks:
+      - my-network
+    restart: always
+
+  pushgateway:
+    image: prom/pushgateway
+    container_name: potapchuk-s-a-netology-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - my-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: potapchuk-s-a-netology-grafana
+    environment:
+      GF_PATHS_CONFIG: /etc/grafana/custom.ini
+    ports:
+      - 80:3000
+    volumes:
+      - ./grafana:/etc/grafana
+      - grafana-data:/var/lib/grafana
+    networks:
+      - my-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: potapchuk-s-a-netology-alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/data'
+    ports:
+      - 9093:9093
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+      - alertmanager-data:/data
+    networks:
+      - my-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  prometheus-data: {}
+  grafana-data: {}
+  alertmanager-data: {}
+
+networks:
+  my-network:
+    name: potapchuk-s-a-my-netology-hw
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
