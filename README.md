@@ -127,12 +127,12 @@ Docker Compose на данный момент отдельно не устана
 
 ### Решение
 
-![](img/img-07-01.png)
 ![](img/img-07-02.png)
+![](img/img-07-04.png)
 
 [Папка с проектом (compose.yml + конфигурационные файлы)](https://github.com/potapchuksa/netology-homework-07-virtualization-6-04-docker-part-2/tree/main/my-compose-v1)
 
-![](img/img-07-04.png)
+![](img/img-07-01.png)
 ![](img/img-07-03.png)
 
 ---
